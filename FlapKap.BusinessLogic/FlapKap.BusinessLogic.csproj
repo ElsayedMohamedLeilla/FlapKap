@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlapKap.Contract\FlapKap.Contract.csproj" />
+    <ProjectReference Include="..\FlapKap.Data\FlapKap.Data.csproj" />
+    <ProjectReference Include="..\FlapKap.Models\FlapKap.Models.csproj" />
+    <ProjectReference Include="..\FlapKap.Repository\FlapKap.Repository.csproj" />
+    <ProjectReference Include="..\FlapKap.Validation\FlapKap.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlapKap.Contract\FlapKap.Contract.csproj" />
+    <ProjectReference Include="..\FlapKap.Data\FlapKap.Data.csproj" />
+    <ProjectReference Include="..\FlapKap.Helpers\FlapKap.Helpers.csproj" />
+    <ProjectReference Include="..\FlapKap.Models\FlapKap.Models.csproj" />
+  </ItemGroup>
+
+</Project>
