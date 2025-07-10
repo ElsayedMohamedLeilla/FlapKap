@@ -1,0 +1,1938 @@
+[2025-07-11 00:04:40 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:04:41 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:04:41 INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:04:41 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:04:41 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:04:42 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:04:42 INF] Hosting environment: Development
+[2025-07-11 00:04:42 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:08:44 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:08:45 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:08:45 INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:08:45 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:08:45 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:08:45 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:08:45 INF] Hosting environment: Development
+[2025-07-11 00:08:45 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:08:56 INF] Executed DbCommand (34ms) [Parameters=[@__p_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:08:56 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:12 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:09:12 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:27 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:09:27 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:27 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:09:27 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 00:09:33 INF] Executed DbCommand (3ms) [Parameters=[@__model_UserName_0='TestBuyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[IsDeleted] = CAST(0 AS bit) AND [m].[UserName] = @__model_UserName_0
+[2025-07-11 00:09:33 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:33 INF] User TestBuyer Logged In Successfully
+[2025-07-11 00:09:43 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:09:43 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:54 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:09:54 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:09:55 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:09:55 INF] Executed DbCommand (46ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='20' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:09:55 INF] User Deposit Done
+[2025-07-11 00:10:02 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:10:02 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:10:02 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:10:02 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 00:10:08 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:10:08 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:10:14 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:10:14 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:10:14 INF] Executed DbCommand (6ms) [Parameters=[@__productIds_0='[2,3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Products] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] NOT IN (
+            SELECT [p0].[value]
+            FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+        )) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:10:18 ERR] Sorry Some Products Not Correct
+[2025-07-11 00:10:31 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:10:31 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:10:31 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:10:31 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 00:11:11 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:11:11 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:11:11 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:11:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 00:11:32 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:11:32 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:11:32 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Products] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] NOT IN (
+            SELECT [p0].[value]
+            FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+        )) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:11:36 ERR] Sorry Some Products Not Correct
+[2025-07-11 00:12:30 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:12:30 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:12:30 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:12:30 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 00:12:32 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:12:32 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:12:32 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Products] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] NOT IN (
+            SELECT [p0].[value]
+            FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+        )) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:15:29 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:15:29 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:15:29 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:15:30 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:15:30 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:15:30 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:15:30 INF] Hosting environment: Development
+[2025-07-11 00:15:30 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:16:25 INF] Executed DbCommand (44ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:16:25 INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:16:25 INF] Executed DbCommand (2ms) [Parameters=[@__id_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Products] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] = @__id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:16:32 INF] Executed DbCommand (6ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:16:32 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:16:32 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='4.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:16:44 ERR] The source IQueryable doesn't implement IDbAsyncEnumerable<FlapKap.Domain.Entities.Product.Product>. Only sources that implement IDbAsyncEnumerable can be used for Entity Framework asynchronous operations. For more details see http://go.microsoft.com/fwlink/?LinkId=287068.
+[2025-07-11 00:16:44 ERR] An error occurred using a transaction.
+[2025-07-11 00:20:14 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:20:15 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:20:15 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:20:15 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:20:15 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:20:16 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:20:16 INF] Hosting environment: Development
+[2025-07-11 00:20:16 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:20:27 INF] Executed DbCommand (33ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:20:27 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:20:27 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[8]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:20:34 ERR] Sorry Some Products Not Correct
+[2025-07-11 00:20:40 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:20:40 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:20:40 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:20:48 INF] Executed DbCommand (5ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:20:48 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:20:48 INF] Executed DbCommand (4ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='4.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:20:51 ERR] The source IQueryable doesn't implement IDbAsyncEnumerable<FlapKap.Domain.Entities.Product.Product>. Only sources that implement IDbAsyncEnumerable can be used for Entity Framework asynchronous operations. For more details see http://go.microsoft.com/fwlink/?LinkId=287068.
+[2025-07-11 00:20:51 ERR] An error occurred using a transaction.
+[2025-07-11 00:21:41 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:21:41 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:21:41 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:21:41 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:21:42 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:21:42 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:21:42 INF] Hosting environment: Development
+[2025-07-11 00:21:42 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:22:00 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:22:01 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:22:01 INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:22:01 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:22:02 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:22:02 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:22:02 INF] Hosting environment: Development
+[2025-07-11 00:22:02 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:22:22 INF] Executed DbCommand (30ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:22:22 INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:22:22 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:22:22 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:22:27 ERR] Sorry Your Deposit Is Less Than Required Items. Items Cost Is: 24.00 Your Deposit: 20.00
+[2025-07-11 00:22:41 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:22:41 INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:22:41 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:22:41 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:22:41 ERR] Sorry There Is No Available Quantity For Product: Test Product 1 - Available Quantity= 15
+[2025-07-11 00:22:54 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:22:54 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:22:54 INF] Executed DbCommand (2ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:22:54 INF] Executed DbCommand (1ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:23:03 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:23:03 INF] Executed DbCommand (4ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='4.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:23:03 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[AddUserId], [p].[AddedDate], [p].[Cost], [p].[DeletionDate], [p].[IsDeleted], [p].[ModifiedDate], [p].[ModifyUserId], [p].[Name], [p].[Quantity], [p].[SellerId]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:23:03 INF] Buy Done
+[2025-07-11 00:23:37 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:23:37 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:23:37 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:23:37 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 00:23:48 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:23:48 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:23:48 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:23:48 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 00:24:02 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:24:02 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:24:02 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:24:02 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 00:25:15 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:25:16 INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:25:16 INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:25:16 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:25:16 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:25:16 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:25:16 INF] Hosting environment: Development
+[2025-07-11 00:25:16 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:25:31 INF] Executed DbCommand (29ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:25:31 INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:25:31 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:25:31 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:25:32 ERR] Sorry Your Deposit Is Less Than Required Items. Items Cost Is: 16.00 Your Deposit: 4.00
+[2025-07-11 00:25:46 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:25:46 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:25:46 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:25:46 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='104.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:25:46 INF] User Deposit Done
+[2025-07-11 00:25:53 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:25:53 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:25:53 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:25:53 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0=NULL (Precision = 30) (Scale = 20) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:25:53 INF] User Reset Done
+[2025-07-11 00:26:06 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:06 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:06 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:26:06 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 00:26:15 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:15 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:19 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:19 INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:19 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:26:19 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='100' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:26:19 INF] User Deposit Done
+[2025-07-11 00:26:21 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:21 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:21 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:26:21 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='120.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:26:21 INF] User Deposit Done
+[2025-07-11 00:26:25 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:25 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:25 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:26:25 INF] Executed DbCommand (1ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='170.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:26:25 INF] User Deposit Done
+[2025-07-11 00:26:34 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:26:34 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:26:34 INF] Executed DbCommand (5ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:26:34 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:26:41 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:26:41 INF] Executed DbCommand (1ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='138.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:27:32 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 00:27:33 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 00:27:33 INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 00:27:33 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 00:27:33 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 00:27:33 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 00:27:33 INF] Hosting environment: Development
+[2025-07-11 00:27:33 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 00:28:14 INF] Executed DbCommand (33ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:28:14 INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:28:14 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3,5]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:28:14 INF] Executed DbCommand (3ms) [Parameters=[@__productIds_0='[3,5]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Quantity], [p].[Cost]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:28:16 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:28:16 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p2='9e641448-8421-4a46-a0c9-548f9560b705' (Size = 4000), @p0='60.00000000000000000000' (Nullable = true) (Precision = 30) (Scale = 20)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlapKap].[MyUsers] SET [Deposit] = @p0
+OUTPUT 1
+WHERE [Id] = @p1 AND [ConcurrencyStamp] = @p2;
+[2025-07-11 00:28:16 INF] Executed DbCommand (4ms) [Parameters=[@__productIds_0='[3,5]' (Size = 4000)], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[AddUserId], [p].[AddedDate], [p].[Cost], [p].[DeletionDate], [p].[IsDeleted], [p].[ModifiedDate], [p].[ModifyUserId], [p].[Name], [p].[Quantity], [p].[SellerId]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[Id] IN (
+    SELECT [p0].[value]
+    FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+)
+[2025-07-11 00:28:16 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 00:28:16 INF] Executed DbCommand (3ms) [Parameters=[@p1='3', @p0='11', @p3='5', @p2='25'], CommandType='"Text"', CommandTimeout='60']
+SET NOCOUNT ON;
+UPDATE [FlapKap].[Products] SET [Quantity] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+UPDATE [FlapKap].[Products] SET [Quantity] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+[2025-07-11 00:28:17 INF] Buy Done
+[2025-07-11 00:28:53 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:28:53 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:28:53 INF] Executed DbCommand (5ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:28:53 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 00:28:59 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 00:28:59 INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 00:28:59 INF] Executed DbCommand (3ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [p].[Id], [p].[Name], [p].[Cost], [p].[Quantity]
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [p].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 00:28:59 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[Products] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+[2025-07-11 01:15:07 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:15:08 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:15:08 INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 01:15:08 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:15:08 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 01:15:09 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 01:15:09 INF] Hosting environment: Development
+[2025-07-11 01:15:09 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 01:15:14 INF] Executed DbCommand (64ms) [Parameters=[@__p_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[Id] = @__p_0
+[2025-07-11 01:15:14 INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='3'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 01:15:14 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='0', @__p_1='5'], CommandType='"Text"', CommandTimeout='60']
+SELECT [m].[Id], [m].[UserName], [m].[Deposit], (
+    SELECT TOP(1) [r].[Name]
+    FROM [FlapKap].[UserRoles] AS [u]
+    INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+    WHERE [m].[Id] = [u].[UserId]) AS [Role]
+FROM [FlapKap].[MyUsers] AS [m]
+ORDER BY [m].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2025-07-11 01:15:14 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT COUNT(*)
+FROM [FlapKap].[MyUsers] AS [m]
+[2025-07-11 01:23:15 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:23:15 INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:23:15 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 01:23:16 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:23:16 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 01:23:19 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 01:23:22 INF] Hosting environment: Development
+[2025-07-11 01:23:22 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 01:23:26 INF] Executed DbCommand (34ms) [Parameters=[@__model_UserName_0='TestUpdated' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[IsDeleted] = CAST(0 AS bit) AND [m].[UserName] = @__model_UserName_0
+[2025-07-11 01:23:26 INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='1'], CommandType='"Text"', CommandTimeout='60']
+SELECT [r].[Name]
+FROM [FlapKap].[UserRoles] AS [u]
+INNER JOIN [FlapKap].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+[2025-07-11 01:23:26 INF] User TestUpdated Logged In Successfully
+[2025-07-11 01:31:22 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:31:22 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:31:22 INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 01:31:22 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:31:23 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 01:31:23 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 01:31:23 INF] Hosting environment: Development
+[2025-07-11 01:31:23 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 01:42:11 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:42:12 INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [FlapKapDB];
+[2025-07-11 01:42:12 INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [FlapKapDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+[2025-07-11 01:42:12 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:42:12 INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Roles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Products] (
+    [Id] int NOT NULL IDENTITY,
+    [SellerId] int NOT NULL,
+    [Cost] decimal(30,20) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Quantity] int NOT NULL,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_MyUsers_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserLogIns] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_UserLogIns] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogIns_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserTokens] (
+    [UserId] int NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserRoles] (
+    [UserId] int NOT NULL,
+    [RoleId] int NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [EmailIndex] ON [FlapKap].[MyUsers] ([NormalizedEmail]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [UserNameIndex] ON [FlapKap].[MyUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_Products_SellerId] ON [FlapKap].[Products] ([SellerId]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [FlapKap].[RoleClaims] ([RoleId]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [FlapKap].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserClaims_UserId] ON [FlapKap].[UserClaims] ([UserId]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserLogIns_UserId] ON [FlapKap].[UserLogIns] ([UserId]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId] ON [FlapKap].[UserRoles] ([RoleId]);
+[2025-07-11 01:42:12 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:42:12 INF] Executed DbCommand (22ms) [Parameters=[@p0=NULL (Size = 4000), @p1='Seller' (Size = 256), @p2='Seller' (Size = 256), @p3=NULL (Size = 4000), @p4='Buyer' (Size = 256), @p5='Buyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [FlapKap].[Roles] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1)) AS i ([ConcurrencyStamp], [Name], [NormalizedName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (i.[ConcurrencyStamp], i.[Name], i.[NormalizedName])
+OUTPUT INSERTED.[Id], i._Position;
+[2025-07-11 01:42:12 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:42:12 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+[2025-07-11 01:42:12 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:42:12 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:42:12 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2025-07-11 01:42:12 INF] Applying migration '20250710130144_InitialMigration'.
+[2025-07-11 01:42:12 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:42:12 ERR] Failed executing DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:44:42 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:44:43 INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:44:43 INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2025-07-11 01:44:43 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:44:43 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:44:43 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:44:43 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:44:43 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:44:43 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2025-07-11 01:44:43 INF] Applying migration '20250710130144_InitialMigration'.
+[2025-07-11 01:44:43 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:44:43 ERR] Failed executing DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:53:08 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:53:09 INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [FlapKapDB];
+[2025-07-11 01:53:09 INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [FlapKapDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+[2025-07-11 01:53:09 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:53:09 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:53:09 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Roles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Products] (
+    [Id] int NOT NULL IDENTITY,
+    [SellerId] int NOT NULL,
+    [Cost] decimal(30,20) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Quantity] int NOT NULL,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_MyUsers_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserLogIns] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_UserLogIns] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogIns_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserTokens] (
+    [UserId] int NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserRoles] (
+    [UserId] int NOT NULL,
+    [RoleId] int NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [EmailIndex] ON [FlapKap].[MyUsers] ([NormalizedEmail]);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [UserNameIndex] ON [FlapKap].[MyUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_Products_SellerId] ON [FlapKap].[Products] ([SellerId]);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [FlapKap].[RoleClaims] ([RoleId]);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [FlapKap].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserClaims_UserId] ON [FlapKap].[UserClaims] ([UserId]);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserLogIns_UserId] ON [FlapKap].[UserLogIns] ([UserId]);
+[2025-07-11 01:53:09 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId] ON [FlapKap].[UserRoles] ([RoleId]);
+[2025-07-11 01:53:10 INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:53:10 INF] Executed DbCommand (26ms) [Parameters=[@p0=NULL (Size = 4000), @p1='Seller' (Size = 256), @p2='Seller' (Size = 256), @p3=NULL (Size = 4000), @p4='Buyer' (Size = 256), @p5='Buyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [FlapKap].[Roles] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1)) AS i ([ConcurrencyStamp], [Name], [NormalizedName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (i.[ConcurrencyStamp], i.[Name], i.[NormalizedName])
+OUTPUT INSERTED.[Id], i._Position;
+[2025-07-11 01:53:10 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:53:10 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:53:10 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:53:10 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+[2025-07-11 01:53:10 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:53:10 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:53:10 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2025-07-11 01:53:10 INF] Applying migration '20250710130144_InitialMigration'.
+[2025-07-11 01:53:10 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:53:10 ERR] Failed executing DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:55:10 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:55:11 INF] Executed DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [FlapKapDB];
+[2025-07-11 01:55:11 INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [FlapKapDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+[2025-07-11 01:55:11 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:55:11 INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:55:11 INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:55:11 INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2025-07-11 01:55:11 INF] Applying migration '20250710130144_InitialMigration'.
+[2025-07-11 01:55:11 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:55:11 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Roles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Products] (
+    [Id] int NOT NULL IDENTITY,
+    [SellerId] int NOT NULL,
+    [Cost] decimal(30,20) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Quantity] int NOT NULL,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_MyUsers_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserLogIns] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_UserLogIns] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogIns_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserTokens] (
+    [UserId] int NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserRoles] (
+    [UserId] int NOT NULL,
+    [RoleId] int NOT NULL,
+    [UserId1] int NULL,
+    [RoleId1] int NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId1] FOREIGN KEY ([RoleId1]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [EmailIndex] ON [FlapKap].[MyUsers] ([NormalizedEmail]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [UserNameIndex] ON [FlapKap].[MyUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_Products_SellerId] ON [FlapKap].[Products] ([SellerId]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [FlapKap].[RoleClaims] ([RoleId]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [FlapKap].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserClaims_UserId] ON [FlapKap].[UserClaims] ([UserId]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserLogIns_UserId] ON [FlapKap].[UserLogIns] ([UserId]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId] ON [FlapKap].[UserRoles] ([RoleId]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId1] ON [FlapKap].[UserRoles] ([RoleId1]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_UserId1] ON [FlapKap].[UserRoles] ([UserId1]);
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250710130144_InitialMigration', N'8.0.13');
+[2025-07-11 01:55:11 INF] Applying migration '20250710150028_FixReoles'.
+[2025-07-11 01:55:11 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [FK_UserRoles_MyUsers_UserId1];
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [FK_UserRoles_Roles_RoleId1];
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP INDEX [IX_UserRoles_RoleId1] ON [FlapKap].[UserRoles];
+[2025-07-11 01:55:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP INDEX [IX_UserRoles_UserId1] ON [FlapKap].[UserRoles];
+[2025-07-11 01:55:11 INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[FlapKap].[UserRoles]') AND [c].[name] = N'RoleId1');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [FlapKap].[UserRoles] DROP COLUMN [RoleId1];
+[2025-07-11 01:55:11 INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[FlapKap].[UserRoles]') AND [c].[name] = N'UserId1');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [FlapKap].[UserRoles] DROP COLUMN [UserId1];
+[2025-07-11 01:55:11 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250710150028_FixReoles', N'8.0.13');
+[2025-07-11 01:55:11 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 01:55:12 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 01:55:12 INF] Hosting environment: Development
+[2025-07-11 01:55:12 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API
+[2025-07-11 01:55:32 INF] Executed DbCommand (30ms) [Parameters=[@__model_UserName_0='TestUpdated' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[IsDeleted] = CAST(0 AS bit) AND [m].[UserName] = @__model_UserName_0
+[2025-07-11 01:55:33 ERR] Sorry User Not Found
+[2025-07-11 01:55:44 INF] Executed DbCommand (7ms) [Parameters=[@__model_UserName_0='TestBuyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[MyUsers] AS [m]
+        WHERE [m].[UserName] = @__model_UserName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:55:44 INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='TESTBUYER' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(1) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[NormalizedUserName] = @__normalizedUserName_0
+[2025-07-11 01:55:44 INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='TESTBUYER@FLAPKAP.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(2) [m].[Id], [m].[AccessFailedCount], [m].[AddUserId], [m].[AddedDate], [m].[ConcurrencyStamp], [m].[DeletionDate], [m].[Deposit], [m].[Email], [m].[EmailConfirmed], [m].[IsActive], [m].[IsDeleted], [m].[LockoutEnabled], [m].[LockoutEnd], [m].[ModifiedDate], [m].[ModifyUserId], [m].[Name], [m].[NormalizedEmail], [m].[NormalizedUserName], [m].[PasswordHash], [m].[PhoneNumber], [m].[PhoneNumberConfirmed], [m].[SecurityStamp], [m].[TwoFactorEnabled], [m].[UserName]
+FROM [FlapKap].[MyUsers] AS [m]
+WHERE [m].[NormalizedEmail] = @__normalizedEmail_0
+[2025-07-11 01:55:44 WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+[2025-07-11 01:55:44 INF] Executed DbCommand (4ms) [Parameters=[@p0='0', @p1=NULL (DbType = Int32), @p2='6d097e18-8f30-4b8b-9daf-d6c79c41fef2' (Size = 4000), @p3=NULL (DbType = DateTime2), @p4=NULL (Precision = 30) (Scale = 20) (DbType = Decimal), @p5='TestBuyer@flapkap.com' (Size = 256), @p6='True', @p7='True', @p8='False', @p9='True', @p10=NULL (DbType = DateTimeOffset), @p11=NULL (DbType = DateTime2), @p12=NULL (DbType = Int32), @p13=NULL (Size = 4000), @p14='TESTBUYER@FLAPKAP.COM' (Size = 256), @p15='TESTBUYER' (Size = 256), @p16='AQAAAAIAAYagAAAAEHgIYMb0oQsXTynyFABnAgUSN+x/oHM/t6K8Lx7w41W1yinVDY220LxIdA/GCsqeug==' (Size = 4000), @p17=NULL (Size = 4000), @p18='True', @p19='Z6SUX6CIAAMJ6CJZE5W2KVMFJW4BSAFJ' (Size = 4000), @p20='False', @p21='TestBuyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [FlapKap].[MyUsers] ([AccessFailedCount], [AddUserId], [ConcurrencyStamp], [DeletionDate], [Deposit], [Email], [EmailConfirmed], [IsActive], [IsDeleted], [LockoutEnabled], [LockoutEnd], [ModifiedDate], [ModifyUserId], [Name], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+OUTPUT INSERTED.[Id], INSERTED.[AddedDate]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+[2025-07-11 01:55:49 INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='BUYER' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [FlapKap].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+[2025-07-11 01:55:49 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='BUYER' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [FlapKap].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+[2025-07-11 01:56:53 WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-11 01:56:54 INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [FlapKapDB];
+[2025-07-11 01:56:54 INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [FlapKapDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+[2025-07-11 01:56:54 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:56:54 INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT 1
+[2025-07-11 01:56:54 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2025-07-11 01:56:54 INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2025-07-11 01:56:54 INF] Applying migration '20250710130144_InitialMigration'.
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SCHEMA_ID(N'FlapKap') IS NULL EXEC(N'CREATE SCHEMA [FlapKap];');
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[MyUsers] (
+    [Id] int NOT NULL IDENTITY,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [Deposit] decimal(30,20) NULL,
+    [IsActive] bit NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_MyUsers] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Roles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[Products] (
+    [Id] int NOT NULL IDENTITY,
+    [SellerId] int NOT NULL,
+    [Cost] decimal(30,20) NOT NULL,
+    [Name] nvarchar(max) NULL,
+    [Quantity] int NOT NULL,
+    [AddedDate] datetime2 NOT NULL DEFAULT (getdate()),
+    [ModifiedDate] datetime2 NULL,
+    [AddUserId] int NULL,
+    [ModifyUserId] int NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletionDate] datetime2 NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_MyUsers_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserLogIns] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] int NOT NULL,
+    CONSTRAINT [PK_UserLogIns] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogIns_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserTokens] (
+    [UserId] int NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] int NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE [FlapKap].[UserRoles] (
+    [UserId] int NOT NULL,
+    [RoleId] int NOT NULL,
+    [UserId1] int NULL,
+    [RoleId1] int NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_MyUsers_UserId1] FOREIGN KEY ([UserId1]) REFERENCES [FlapKap].[MyUsers] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_UserRoles_Roles_RoleId1] FOREIGN KEY ([RoleId1]) REFERENCES [FlapKap].[Roles] ([Id]) ON DELETE NO ACTION
+);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [EmailIndex] ON [FlapKap].[MyUsers] ([NormalizedEmail]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [UserNameIndex] ON [FlapKap].[MyUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_Products_SellerId] ON [FlapKap].[Products] ([SellerId]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [FlapKap].[RoleClaims] ([RoleId]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [FlapKap].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserClaims_UserId] ON [FlapKap].[UserClaims] ([UserId]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserLogIns_UserId] ON [FlapKap].[UserLogIns] ([UserId]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId] ON [FlapKap].[UserRoles] ([RoleId]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_RoleId1] ON [FlapKap].[UserRoles] ([RoleId1]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE INDEX [IX_UserRoles_UserId1] ON [FlapKap].[UserRoles] ([UserId1]);
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250710130144_InitialMigration', N'8.0.13');
+[2025-07-11 01:56:54 INF] Applying migration '20250710150028_FixReoles'.
+[2025-07-11 01:56:54 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [FK_UserRoles_MyUsers_UserId1];
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [FK_UserRoles_Roles_RoleId1];
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP INDEX [IX_UserRoles_RoleId1] ON [FlapKap].[UserRoles];
+[2025-07-11 01:56:54 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP INDEX [IX_UserRoles_UserId1] ON [FlapKap].[UserRoles];
+[2025-07-11 01:56:54 INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[FlapKap].[UserRoles]') AND [c].[name] = N'RoleId1');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [FlapKap].[UserRoles] DROP COLUMN [RoleId1];
+[2025-07-11 01:56:55 INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[FlapKap].[UserRoles]') AND [c].[name] = N'UserId1');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [FlapKap].[UserRoles] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [FlapKap].[UserRoles] DROP COLUMN [UserId1];
+[2025-07-11 01:56:55 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250710150028_FixReoles', N'8.0.13');
+[2025-07-11 01:56:55 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FlapKap].[Roles] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2025-07-11 01:56:55 INF] Executed DbCommand (19ms) [Parameters=[@p0=NULL (Size = 4000), @p1='Seller' (Size = 256), @p2='Seller' (Size = 256), @p3=NULL (Size = 4000), @p4='Buyer' (Size = 256), @p5='Buyer' (Size = 256)], CommandType='"Text"', CommandTimeout='60']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [FlapKap].[Roles] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1)) AS i ([ConcurrencyStamp], [Name], [NormalizedName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (i.[ConcurrencyStamp], i.[Name], i.[NormalizedName])
+OUTPUT INSERTED.[Id], i._Position;
+[2025-07-11 01:56:55 WRN] The WebRootPath was not found: D:\Temp\FlapKap Task\FlapKap.API\wwwroot. Static files may be unavailable.
+[2025-07-11 01:56:55 INF] Application started. Press Ctrl+C to shut down.
+[2025-07-11 01:56:55 INF] Hosting environment: Development
+[2025-07-11 01:56:55 INF] Content root path: D:\Temp\FlapKap Task\FlapKap.API

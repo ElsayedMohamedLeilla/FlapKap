@@ -12,6 +12,7 @@ using FlapKap.Models.Requests;
 using FlapKap.Models.Response.UserManagement;
 using FlapKap.Validation.FluentValidation.Users;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Data;
 
 namespace FlapKap.BusinessLogic
@@ -22,12 +23,14 @@ namespace FlapKap.BusinessLogic
         private readonly RequestInfo requestInfo;
         private readonly IProductBLValidation productBLValidation;
         private readonly IRepositoryManager repositoryManager;
+        private readonly ILogger<ProductBL> _logger;
         public ProductBL(IUnitOfWork<ApplicationDBContext> _unitOfWork,
             IRepositoryManager _repositoryManager,
-           RequestInfo _requestHeaderContext,
+           RequestInfo _requestHeaderContext, ILogger<ProductBL> logger,
            IProductBLValidation _productBLValidation)
         {
             unitOfWork = _unitOfWork;
+            _logger = logger;
             requestInfo = _requestHeaderContext;
             repositoryManager = _repositoryManager;
             productBLValidation = _productBLValidation;
@@ -65,6 +68,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
+            _logger.LogInformation("Create Product Done");
             return product.Id;
 
             #endregion
@@ -102,6 +106,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
+            _logger.LogInformation("Update Product Done");
             return true;
 
             #endregion
@@ -177,6 +182,7 @@ namespace FlapKap.BusinessLogic
             
             product.Delete();
             await unitOfWork.SaveAsync();
+            _logger.LogInformation("Delete Product Done");
             return true;
         }
     }

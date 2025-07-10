@@ -111,15 +111,13 @@ var app = builder.Build();
 IServiceScope serviceScope = app.Services.GetService<IServiceScopeFactory>()
     .CreateScope();
 ApplicationDBContext context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDBContext>();
+
+context.Database.Migrate();
+
 SeedDB.Initialize(app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
 
 
 app.UseMiddleware<RequestInfoMiddleWare>();
-
-if (!app.Environment.IsDevelopment())
-{
-    context.Database.Migrate();
-}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -159,3 +157,5 @@ app.UseMiddleware<ExceptionHandlerMiddleware>();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

@@ -14,6 +14,7 @@ using FlapKap.Repository.UserManagement;
 using FlapKap.Validation.FluentValidation;
 using FlapKap.Validation.FluentValidation.Users;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Data;
 
 namespace FlapKap.BusinessLogic
@@ -25,12 +26,14 @@ namespace FlapKap.BusinessLogic
         private readonly IUserBLValidation userBLValidation;
         private readonly IRepositoryManager repositoryManager;
         private readonly UserManagerRepository userManagerRepository;
+        private readonly ILogger<UserBL> _logger;
         public UserBL(IUnitOfWork<ApplicationDBContext> _unitOfWork,
             IRepositoryManager _repositoryManager,
             UserManagerRepository _userManagerRepository,
-           RequestInfo _requestHeaderContext,
+           RequestInfo _requestHeaderContext, ILogger<UserBL> logger,
            IUserBLValidation _userBLValidation)
         {
+            _logger = logger;
             unitOfWork = _unitOfWork;
             requestInfo = _requestHeaderContext;
             repositoryManager = _repositoryManager;
@@ -88,6 +91,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
+            _logger.LogInformation("Create User Done");
             return user.Id;
 
             #endregion
@@ -146,6 +150,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
+            _logger.LogInformation("Update User Done");
             return true;
 
             #endregion
@@ -233,6 +238,7 @@ namespace FlapKap.BusinessLogic
 
             user.Delete();
             await unitOfWork.SaveAsync();
+            _logger.LogInformation("Delete User Done");
             return true;
         }
     }

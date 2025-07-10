@@ -3,16 +3,11 @@ using FlapKap.Contract.BusinessValidation;
 using FlapKap.Contract.Repository;
 using FlapKap.Data;
 using FlapKap.Data.UnitOfWork;
-using FlapKap.Domain.Entities.UserActions;
-using FlapKap.Helpers;
 using FlapKap.Models.Context;
-using FlapKap.Models.DTOs.Exceptions;
 using FlapKap.Models.DTOs.Users;
-using FlapKap.Models.Requests;
 using FlapKap.Models.Response.UserManagement;
-using FlapKap.Validation.FluentValidation.Users;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
+using Microsoft.Extensions.Logging;
 
 namespace FlapKap.BusinessLogic
 {
@@ -22,12 +17,14 @@ namespace FlapKap.BusinessLogic
         private readonly RequestInfo requestInfo;
         private readonly IUserActionsBLValidation userActionsBLValidation;
         private readonly IRepositoryManager repositoryManager;
+        private readonly ILogger<UserActionsBL> _logger;
         public UserActionsBL(IUnitOfWork<ApplicationDBContext> _unitOfWork,
             IRepositoryManager _repositoryManager,
-           RequestInfo _requestHeaderContext,
+           RequestInfo _requestHeaderContext, ILogger<UserActionsBL> logger,
            IUserActionsBLValidation _userActionsBLValidation)
         {
             unitOfWork = _unitOfWork;
+            _logger = logger;
             requestInfo = _requestHeaderContext;
             repositoryManager = _repositoryManager;
             userActionsBLValidation = _userActionsBLValidation;
@@ -37,27 +34,105 @@ namespace FlapKap.BusinessLogic
 
             #region Business Validation
 
-            await userActionsBLValidation.CreateValidation(model);
+            userActionsBLValidation.DepositValidation(model);
 
             #endregion
 
             unitOfWork.CreateTransaction();
 
-            #region Insert UserActions
+            #region Deposit
 
-            var currentUserId = requestInfo.UserId;
-
-            var userActions = new UserActions
+            var getUser = await repositoryManager.UserRepository.GetByIdAsync(requestInfo.UserId);
+            if (getUser != null)
             {
-                Name = model.Name,
-                Cost = model.Cost,
-                SellerId = currentUserId,
-                AddUserId = currentUserId,
-                Quantity = model.Quantity
-            };
+                getUser.Deposit = (getUser.Deposit ?? 0) + model.DepositAmount;
+                await unitOfWork.SaveAsync();
+            }
 
-            var createUserActionsResponse = repositoryManager.UserActionsRepository.
-                Insert(userActions);
+            #endregion
+
+            #region Handle Response
+
+            await unitOfWork.CommitAsync();
+
+            _logger.LogInformation("User Deposit Done");
+            return true;
+
+            #endregion
+
+        }
+        public async Task<BuyResponseModel> Buy(BuyModel model)
+        {
+            var result = new BuyResponseModel();
+
+            #region Business Validation
+
+            var validationResult = await userActionsBLValidation.BuyValidation(model);
+
+            #endregion
+
+            unitOfWork.CreateTransaction();
+
+            #region Handle Update Deposit 
+
+            var getUser = await repositoryManager.UserRepository.
+                GetByIdAsync(requestInfo.UserId);
+            if (getUser != null)
+            {
+                getUser.Deposit = (getUser.Deposit ?? 0) - validationResult.AllItemsCost;
+                await unitOfWork.SaveAsync();
+            }
+
+            #region Hanlde Change
+
+            var remDeposit = getUser.Deposit;
+            result.TotalRemaining = getUser.Deposit ?? 0;
+
+            while (remDeposit >= 5)
+            {
+                if (remDeposit >= 100)
+                {
+                    result.ChangeList.Add(100);
+                    remDeposit -= 100;
+                }
+                else if (remDeposit >= 50)
+                {
+                    result.ChangeList.Add(50);
+                    remDeposit -= 50;
+                }
+                else if (remDeposit >= 20)
+                {
+                    result.ChangeList.Add(20);
+                    remDeposit -= 20;
+                }
+                else if (remDeposit >= 10)
+                {
+                    result.ChangeList.Add(10);
+                    remDeposit -= 10;
+                }
+                else if (remDeposit >= 5)
+                {
+                    result.ChangeList.Add(5);
+                    remDeposit -= 5;
+                }
+            }
+
+            #endregion
+
+            #endregion
+
+            #region Handle Update Products
+
+            var productIds = validationResult.DBItems.Select(d => d.Id).ToList();
+            var getProducts = await repositoryManager.ProductRepository.
+                GetWithTracking(p => productIds.Contains(p.Id)).ToListAsync();
+
+            foreach (var product in getProducts)
+            {
+                var getItem = model.Items.FirstOrDefault(i => i.ProductId == product.Id);
+                product.Quantity -= getItem?.Quantity ?? 0;
+            }
+
             await unitOfWork.SaveAsync();
 
             #endregion
@@ -65,119 +140,55 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            return userActions.Id;
+
+            var items = model.Items;
+            result.TotalSpent = validationResult.AllItemsCost;
+            result.Products = getProducts.
+                Select(product => new BuyResponseItemModel
+                {
+                    ProductName = product.Name,
+                    Quantity = items.FirstOrDefault(i => i.ProductId == product.Id).Quantity,
+                    UnitPrice = product.Cost,
+                    Total = product.Cost * items.FirstOrDefault(i => i.ProductId == product.Id).Quantity
+                }).ToList();
+
+            _logger.LogInformation("Buy Done");
+
+            return result;
 
             #endregion
 
         }
-        public async Task<bool> Update(UpdateUserActionsModel model)
+        public async Task<bool> Reset()
         {
 
             #region Business Validation
 
-            await userActionsBLValidation.UpdateValidation(model);
+            userActionsBLValidation.ResetValidation();
 
             #endregion
 
             unitOfWork.CreateTransaction();
 
-            #region Update UserActions
+            #region Reset
 
-            var currentUserId = requestInfo.UserId;
-            var getUserActions = await repositoryManager.UserActionsRepository.
-                GetEntityByConditionWithTrackingAsync(userActions =>
-                userActions.Id == model.Id && userActions.SellerId == currentUserId) ??
-                 throw new BusinessValidationException("Sorry UserActions Not Found");
-
-            getUserActions.Name = model.Name;
-            getUserActions.ModifiedDate = DateTime.UtcNow;
-            getUserActions.ModifyUserId = currentUserId;
-            getUserActions.Cost = model.Cost;
-            getUserActions.Quantity = model.Quantity;
-
-            await unitOfWork.SaveAsync();
+            var getUser = await repositoryManager.UserRepository.GetByIdAsync(requestInfo.UserId);
+            if (getUser != null)
+            {
+                getUser.Deposit = null;
+                await unitOfWork.SaveAsync();
+            }
 
             #endregion
 
             #region Handle Response
 
             await unitOfWork.CommitAsync();
+            _logger.LogInformation("User Reset Done");
             return true;
 
             #endregion
-        }
-        public async Task<GetUserActionssResponse> Get(GetUserActionssCriteria criteria)
-        {
-            var userActionsRepository = repositoryManager.UserActionsRepository;
-            var freeText = string.IsNullOrEmpty(criteria.FreeText) ?
-                null : criteria.FreeText.Trim();
-            var currentUserId = requestInfo.UserId;
 
-            var query = userActionsRepository.Get(u => 
-            (requestInfo.UserRole == UserRoleEnum.Buyer || u.SellerId == currentUserId) &&
-            (freeText == null || u.Name.Contains(freeText)));
-
-            #region paging
-
-            int skip = PagingHelper.Skip(criteria.PageNumber, criteria.PageSize);
-            int take = PagingHelper.Take(criteria.PageSize);
-
-            #region sorting
-
-            var queryOrdered = query.OrderByDescending(u => u.Id);
-
-            #endregion
-
-            var queryPaged = criteria.PagingEnabled ? queryOrdered.Skip(skip).Take(take) : queryOrdered;
-
-            #endregion
-
-            #region Handle Response
-
-            var userActionssList = await queryPaged.Select(userActions => new GetUserActionssResponseModel
-            {
-                Id = userActions.Id,
-                Name = userActions.Name,
-                Cost = userActions.Cost,
-                Quantity = userActions.Quantity
-            }).ToListAsync();
-
-            return new GetUserActionssResponse
-            {
-                UserActionss = userActionssList,
-                TotalCount = await query.CountAsync()
-            };
-
-            #endregion
-
-        }
-        public async Task<GetUserActionsByIdResponseModel> GetById(int userActionsId)
-        {
-            var currentUserId = requestInfo.UserId;
-            var userActions = await repositoryManager.UserActionsRepository.
-                Get(userActions => userActions.Id == userActionsId && userActions.SellerId == currentUserId)
-                .Select(userActions => new GetUserActionsByIdResponseModel
-                {
-                    Id = userActions.Id,
-                    Name = userActions.Name,
-                    Cost = userActions.Cost,
-                    Quantity = userActions.Quantity
-                }).FirstOrDefaultAsync() ?? throw new BusinessValidationException("Sorry UserActions Not Found");
-
-            return userActions;
-
-        }
-        public async Task<bool> Delete(int userActionsId)
-        {
-            var currentUserId = requestInfo.UserId;
-            var userActions = await repositoryManager.UserActionsRepository.
-                GetEntityByConditionWithTrackingAsync(userActions => userActions.Id == userActionsId &&
-                userActions.SellerId == currentUserId) ??
-                throw new BusinessValidationException("Sorry UserActions Not Found");
-            
-            userActions.Delete();
-            await unitOfWork.SaveAsync();
-            return true;
         }
     }
 }

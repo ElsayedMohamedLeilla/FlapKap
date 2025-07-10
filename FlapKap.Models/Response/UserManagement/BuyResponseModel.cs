@@ -2,6 +2,11 @@
 {
     public class BuyResponseModel
     {
+        public BuyResponseModel()
+        {
+            ChangeList = [];
+            Products = [];
+        }
         public decimal TotalSpent { get; set; }
         public List<BuyResponseItemModel> Products { get; set; }
         public decimal TotalRemaining { get; set; }

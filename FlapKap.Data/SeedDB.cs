@@ -8,7 +8,7 @@ namespace FlapKap.Data
         public static void Initialize(IServiceProvider serviceProvider)
         {
             var context = serviceProvider.GetRequiredService<ApplicationDBContext>();
-            context.Database.EnsureCreated();
+            //context.Database.EnsureCreated();
 
             var rolesToSeed = new List<Role>
             {

@@ -3,6 +3,7 @@ using FlapKap.Contract.Repository;
 using FlapKap.Models.Context;
 using FlapKap.Models.DTOs.Exceptions;
 using FlapKap.Models.DTOs.Users;
+using FlapKap.Models.Response.UserManagement;
 using Microsoft.EntityFrameworkCore;
 
 namespace FlapKap.Validation.BusinessValidation
@@ -38,28 +39,31 @@ namespace FlapKap.Validation.BusinessValidation
 
             return true;
         }
-        public async Task<bool> BuyValidation(BuyModel model)
+        public async Task<GetBuyValidationResponseModel> BuyValidation(BuyModel model)
         {
             var items = model.Items;
             var productIds = model.Items.Select(x => x.ProductId).ToList();
 
-            var checkIfAllProductsIsCorrect = await repositoryManager
-                .ProductRepository.
-                Get(c => !productIds.Contains(c.Id)).AnyAsync();
+            var existingProductIds = await repositoryManager.ProductRepository
+                .Get(p => productIds.Contains(p.Id))
+                .Select(p => p.Id)
+                .ToListAsync();
 
-            if (checkIfAllProductsIsCorrect)
+            bool hasInvalidProductId = productIds.Except(existingProductIds).Any();
+
+            if (hasInvalidProductId)
             {
                 throw new BusinessValidationException("Sorry Some Products Not Correct");
             }
 
             var getDBProducts = await repositoryManager
                 .ProductRepository.Get(p => productIds.Contains(p.Id)).
-                Select(p => new
+                Select(p => new BuyValidationItemModel
                 {
-                    p.Name,
-                    p.Id,
-                    p.Quantity,
-                    p.Cost
+                    Id = p.Id,
+                    Name = p.Name,
+                    Quantity = p.Quantity,
+                    Cost = p.Cost
                 }).ToListAsync();
 
             var checkQuantity = getDBProducts.FirstOrDefault(d => d.Quantity <
@@ -89,7 +93,13 @@ namespace FlapKap.Validation.BusinessValidation
                     sumRounded + " Your Deposit: " + depositRounded);
             }
 
-            return true;
+            var response = new GetBuyValidationResponseModel
+            {
+                AllItemsCost = sumAllItems,
+                DBItems = getDBProducts
+            };
+
+            return response;
         }
     }
 }
