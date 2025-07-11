@@ -11,7 +11,8 @@ namespace FlapKap.Tests.Common
         {
             _client = factory.CreateClient();
             _client.DefaultRequestHeaders.Authorization =
-              new AuthenticationHeaderValue("Bearer", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUZXN0VXBkYXRlZCIsImp0aSI6IjQ5MTFlOGJkLWY3YmItNDc0MC05ZjJhLTk2MmJjMjdkYzc0ZCIsInVuaXF1ZV9uYW1lIjoiMSIsIlVzZXJJZCI6IjEiLCJyb2xlIjoiU2VsbGVyIiwibmJmIjoxNzUyMTg2MjA2LCJleHAiOjE3NTI0NDU0MDYsImlhdCI6MTc1MjE4NjIwNiwiaXNzIjoiQ29tcGFueUlzc3Vlci5jb20iLCJhdWQiOiJDb21wYW55SXNzdWVyLmNvbSJ9.P66kgFpLCaXzd9ODEr3NDS72u6l1Y9ZG4ZuL6tYuMl8");
+              new AuthenticationHeaderValue("Bearer",
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUZXN0QnV5ZXIiLCJqdGkiOiJiZDMxYTk5YS0xOWIxLTQ2YzAtYmJlYy0wYTRkYjk2MTBlNzAiLCJ1bmlxdWVfbmFtZSI6IjEiLCJVc2VySWQiOiIxIiwicm9sZSI6IkJ1eWVyIiwibmJmIjoxNzUyMjM5MTUwLCJleHAiOjE3NTI0OTgzNTAsImlhdCI6MTc1MjIzOTE1MCwiaXNzIjoiQ29tcGFueUlzc3Vlci5jb20iLCJhdWQiOiJDb21wYW55SXNzdWVyLmNvbSJ9.9fkz4gmDA_jplJSPJh-pSZPI3zp03daUOob0brErtA0");
         }
     }
 }

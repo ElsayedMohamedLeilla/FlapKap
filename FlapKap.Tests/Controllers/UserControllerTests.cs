@@ -1,6 +1,6 @@
-using FlapKap.Models.DTOs.Products;
+using FlapKap.Models.DTOs.Users;
 using FlapKap.Models.Response;
-using FlapKap.Models.Response.Products;
+using FlapKap.Models.Response.UserManagement;
 using FlapKap.Tests.Common;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
@@ -9,21 +9,21 @@ using System.Text.Json;
 
 namespace FlapKap.Tests.Controllers
 {
-    public class ProductControllerTests(WebApplicationFactory<Program> factory) : TestBase(factory)
+    public class UserControllerTests(WebApplicationFactory<Program> factory) : TestBase(factory)
     {
         private readonly DateTime timeNow = DateTime.UtcNow;
 
         [Fact]
-        public async Task CreateProduct_ReturnsOk()
+        public async Task CreateUser_ReturnsOk()
         {
-            var product = new CreateProductModel
+            var product = new CreateUserModel
             {
-                Name = "Test Product " + timeNow,
-                Cost = 15.5m,
-                Quantity = 47
+                UserName = "UserTest" + timeNow.Ticks,
+                Password = "123456",
+                Role = UserRoleEnum.Seller
             };
 
-            var responseCreate = await _client.PostAsJsonAsync("/api/Product/Create", product);
+            var responseCreate = await _client.PostAsJsonAsync("/api/User/Create", product);
             Assert.Equal(HttpStatusCode.OK, responseCreate.StatusCode);
             var contentCreate = await responseCreate.Content.ReadAsStringAsync();
             var resultCreate = JsonSerializer.Deserialize<SuccessResponse<int>>(contentCreate, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
@@ -31,27 +31,26 @@ namespace FlapKap.Tests.Controllers
 
         }
         [Fact]
-        public async Task UpdateProduct_ReturnsOk()
+        public async Task UpdateUser_ReturnsOk()
         {
             #region Get Data
 
-            var responseGet = await _client.GetAsync("/api/Product/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
+            var responseGet = await _client.GetAsync("/api/User/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
             responseGet.EnsureSuccessStatusCode();
             var contentGet = await responseGet.Content.ReadAsStringAsync();
-            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GetProductsResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GeUsersResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             var Id = resultGet.Data.First().Id;
 
             #endregion
 
-            var product = new UpdateProductModel
+            var product = new UpdateUserModel
             {
                 Id = Id,
-                Name = "Test Product Updated " + timeNow,
-                Cost = 10.5m,
-                Quantity = 150
+                UserName = "UserTestUpdated" + timeNow.Ticks,
+                Role = UserRoleEnum.Seller
             };
 
-            var responseUpdate = await _client.PutAsJsonAsync("/api/Product/Update", product);
+            var responseUpdate = await _client.PutAsJsonAsync("/api/User/Update", product);
 
             Assert.Equal(HttpStatusCode.OK, responseUpdate.StatusCode);
 
@@ -61,47 +60,47 @@ namespace FlapKap.Tests.Controllers
 
         }
         [Fact]
-        public async Task GetProducts_ReturnsOk()
+        public async Task GetUsers_ReturnsOk()
         {
-            var responseGet = await _client.GetAsync("/api/Product/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
+            var responseGet = await _client.GetAsync("/api/User/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
             responseGet.EnsureSuccessStatusCode();
             var contentGet = await responseGet.Content.ReadAsStringAsync();
-            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GetProductsResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GeUsersResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             Assert.True(resultGet.Data != null && resultGet.Data.Count > 0);
         }
         [Fact]
-        public async Task GetProductById_ReturnsOk()
+        public async Task GetUserById_ReturnsOk()
         {
             #region Get Data
 
-            var responseGet = await _client.GetAsync("/api/Product/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
+            var responseGet = await _client.GetAsync("/api/User/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
             responseGet.EnsureSuccessStatusCode();
             var contentGet = await responseGet.Content.ReadAsStringAsync();
-            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GetProductsResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GeUsersResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             var Id = resultGet.Data.First().Id;
 
             #endregion
 
-            var responseGetById = await _client.GetAsync("/api/Product/GetById?productId=" + Id);
+            var responseGetById = await _client.GetAsync("/api/User/GetById?userId=" + Id);
             responseGetById.EnsureSuccessStatusCode();
             var contentGetById = await responseGetById.Content.ReadAsStringAsync();
-            var resultGetById = JsonSerializer.Deserialize<SuccessResponse<GetProductByIdResponseModel>>(contentGetById, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var resultGetById = JsonSerializer.Deserialize<SuccessResponse<GetUserByIdResponseModel>>(contentGetById, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             Assert.True(resultGetById.Data != null && resultGetById.Data.Id > 0);
         }
         [Fact]
-        public async Task DeleteProduct_ReturnsOk()
+        public async Task DeleteUser_ReturnsOk()
         {
             #region Get Data
 
-            var responseGet = await _client.GetAsync("/api/Product/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
+            var responseGet = await _client.GetAsync("/api/User/Get?PagingEnabled=true&PageSize=5&PageNumber=0");
             responseGet.EnsureSuccessStatusCode();
             var contentGet = await responseGet.Content.ReadAsStringAsync();
-            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GetProductsResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var resultGet = JsonSerializer.Deserialize<SuccessResponse<List<GeUsersResponseModel>>>(contentGet, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             var Id = resultGet.Data.First().Id;
 
             #endregion
 
-            var responseGetById = await _client.DeleteAsync("/api/Product/Delete?productId=" + Id);
+            var responseGetById = await _client.DeleteAsync("/api/User/Delete?userId=" + Id);
             responseGetById.EnsureSuccessStatusCode();
             var contentGetById = await responseGetById.Content.ReadAsStringAsync();
             var resultGetById = JsonSerializer.Deserialize<SuccessResponse<bool>>(contentGetById, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });

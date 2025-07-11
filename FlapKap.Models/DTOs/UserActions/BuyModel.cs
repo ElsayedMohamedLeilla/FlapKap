@@ -2,6 +2,10 @@
 {
     public class BuyModel
     {
+        public BuyModel()
+        {
+            Items = [];
+        }
         public List<BuyItemModel> Items { get; set; }
     }
 }

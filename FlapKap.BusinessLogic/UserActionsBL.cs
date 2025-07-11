@@ -55,7 +55,7 @@ namespace FlapKap.BusinessLogic
 
             await unitOfWork.CommitAsync();
 
-            _logger.LogInformation("User Deposit Done");
+            _logger.LogInformation("User {UserId} deposited {Amount} cents", getUser.Id, Math.Round(model.DepositAmount, 2));
             return true;
 
             #endregion
@@ -152,7 +152,7 @@ namespace FlapKap.BusinessLogic
                     Total = product.Cost * items.FirstOrDefault(i => i.ProductId == product.Id).Quantity
                 }).ToList();
 
-            _logger.LogInformation("Buy Done");
+            _logger.LogInformation("User {UserId} buy {Count} items", getUser.Id, model.Items.Count);
 
             return result;
 
@@ -184,7 +184,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            _logger.LogInformation("User Reset Done");
+            _logger.LogInformation("User {UserId} reset his balance", getUser.Id);
             return true;
 
             #endregion

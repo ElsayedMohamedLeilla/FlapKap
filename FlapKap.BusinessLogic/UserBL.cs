@@ -13,6 +13,7 @@ using FlapKap.Models.Response.UserManagement;
 using FlapKap.Repository.UserManagement;
 using FlapKap.Validation.FluentValidation;
 using FlapKap.Validation.FluentValidation.Users;
+using Microsoft.AspNet.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
@@ -91,7 +92,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            _logger.LogInformation("Create User Done");
+            _logger.LogInformation("user {UserId} added", user.Id);
             return user.Id;
 
             #endregion
@@ -150,7 +151,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            _logger.LogInformation("Update User Done");
+            _logger.LogInformation("user {UserId} updated", getUser.Id);
             return true;
 
             #endregion
@@ -238,7 +239,7 @@ namespace FlapKap.BusinessLogic
 
             user.Delete();
             await unitOfWork.SaveAsync();
-            _logger.LogInformation("Delete User Done");
+            _logger.LogInformation("user {UserId} deleted", user.Id);
             return true;
         }
     }

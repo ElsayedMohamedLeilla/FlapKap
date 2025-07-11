@@ -11,8 +11,6 @@ using FlapKap.Models.DTOs.Products;
 using FlapKap.Models.DTOs.Users;
 using FlapKap.Models.Requests;
 using FlapKap.Models.Response.Products;
-using FlapKap.Models.Response.UserManagement;
-using FlapKap.Validation.FluentValidation.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Data;
@@ -70,7 +68,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            _logger.LogInformation("Create Product Done");
+            _logger.LogInformation("Seller {UserId} add a product", requestInfo.UserId);
             return product.Id;
 
             #endregion
@@ -108,7 +106,7 @@ namespace FlapKap.BusinessLogic
             #region Handle Response
 
             await unitOfWork.CommitAsync();
-            _logger.LogInformation("Update Product Done");
+            _logger.LogInformation("Seller {UserId} updated product", requestInfo.UserId);
             return true;
 
             #endregion
@@ -120,7 +118,7 @@ namespace FlapKap.BusinessLogic
                 null : criteria.FreeText.Trim();
             var currentUserId = requestInfo.UserId;
 
-            var query = productRepository.Get(u => 
+            var query = productRepository.Get(u =>
             (requestInfo.UserRole == UserRoleEnum.Buyer || u.SellerId == currentUserId) &&
             (freeText == null || u.Name.Contains(freeText)));
 
@@ -181,10 +179,10 @@ namespace FlapKap.BusinessLogic
                 GetEntityByConditionWithTrackingAsync(product => product.Id == productId &&
                 product.SellerId == currentUserId) ??
                 throw new BusinessValidationException("Sorry Product Not Found");
-            
+
             product.Delete();
             await unitOfWork.SaveAsync();
-            _logger.LogInformation("Delete Product Done");
+            _logger.LogInformation("Seller {UserId} deleted product", requestInfo.UserId);
             return true;
         }
     }
