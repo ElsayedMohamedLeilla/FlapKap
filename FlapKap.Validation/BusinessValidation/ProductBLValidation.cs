@@ -2,7 +2,7 @@
 using FlapKap.Contract.Repository;
 using FlapKap.Models.Context;
 using FlapKap.Models.DTOs.Exceptions;
-using FlapKap.Models.DTOs.Users;
+using FlapKap.Models.DTOs.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace FlapKap.Validation.BusinessValidation

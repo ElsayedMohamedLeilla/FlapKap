@@ -1,5 +1,5 @@
-﻿using FlapKap.Models.DTOs.Users;
-using FlapKap.Models.Response.UserManagement;
+﻿using FlapKap.Models.DTOs.UserActions;
+using FlapKap.Models.Response.UserActions;
 
 namespace FlapKap.Contract.BusinessValidation
 {

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Dawem.BusinessLogic
+namespace FlapKap.BusinessLogic
 {
     public static class StartupSetup
     {

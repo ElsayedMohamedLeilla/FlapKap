@@ -1,4 +1,4 @@
-﻿using FlapKap.Models.DTOs.Users;
+﻿using FlapKap.Models.DTOs.UserActions;
 using FlapKap.Models.Response.UserManagement;
 
 namespace FlapKap.Contract.BusinessLogic

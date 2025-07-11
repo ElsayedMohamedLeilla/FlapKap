@@ -1,11 +1,10 @@
-﻿using FlapKap.API.MiddleWares;
-using FlapKap.Data;
+﻿using FlapKap.Data;
 using FlapKap.Data.UnitOfWork;
 using FlapKap.Models.Context;
 using FlapKap.Models.DTOs.Exceptions;
 using FlapKap.Models.Response;
 
-namespace Dawem.API.MiddleWares
+namespace FlapKap.API.MiddleWares
 {
     public class UnauthorizedMessageHandlerMiddleware
     {
@@ -31,7 +30,7 @@ namespace Dawem.API.MiddleWares
                 await ReturnHelper.Return(unitOfWork, context, statusCode, response);
 
             }
-            else if ((context.Response.StatusCode == StatusCodes.Status403Forbidden) && !context.Response.HasStarted)
+            else if (context.Response.StatusCode == StatusCodes.Status403Forbidden && !context.Response.HasStarted)
             {
                 int statusCode = StatusCodes.Status403Forbidden;
                 var response = new ErrorResponse

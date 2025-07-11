@@ -82,12 +82,6 @@ namespace FlapKap.API
             }
             );
         }
-        public static void ConfigureRepositoryContainerOld(this IServiceCollection services)
-        {
-            services.AddScoped<ApplicationDBContext>();
-            services.AddScoped<IUnitOfWork<ApplicationDBContext>, UnitOfWork<ApplicationDBContext>>();
-
-        }
         public static void AddUserConfiguration(this IServiceCollection services)
         {
 

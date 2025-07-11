@@ -1,4 +1,4 @@
-﻿namespace FlapKap.Models.Response.UserManagement
+﻿namespace FlapKap.Models.Response.UserActions
 {
     public class GetBuyValidationResponseModel
     {

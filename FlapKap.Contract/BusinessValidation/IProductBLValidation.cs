@@ -1,4 +1,4 @@
-﻿using FlapKap.Models.DTOs.Users;
+﻿using FlapKap.Models.DTOs.Products;
 
 namespace FlapKap.Contract.BusinessValidation
 {

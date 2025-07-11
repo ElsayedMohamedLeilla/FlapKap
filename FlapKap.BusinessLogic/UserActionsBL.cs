@@ -4,7 +4,7 @@ using FlapKap.Contract.Repository;
 using FlapKap.Data;
 using FlapKap.Data.UnitOfWork;
 using FlapKap.Models.Context;
-using FlapKap.Models.DTOs.Users;
+using FlapKap.Models.DTOs.UserActions;
 using FlapKap.Models.Response.UserManagement;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

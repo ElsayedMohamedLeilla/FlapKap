@@ -1,7 +1,7 @@
-﻿using FlapKap.Models.DTOs.Users;
+﻿using FlapKap.Models.DTOs.Products;
 using FluentValidation;
 
-namespace FlapKap.Validation.FluentValidation.Users
+namespace FlapKap.Validation.FluentValidation.Products
 {
     public class CreateProductModelValidator : AbstractValidator<CreateProductModel>
     {

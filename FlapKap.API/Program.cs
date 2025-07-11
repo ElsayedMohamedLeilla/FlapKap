@@ -1,14 +1,13 @@
-using Dawem.API.MiddleWares;
-using Dawem.BusinessLogic;
-using Dawem.Validation;
 using FlapKap.API;
 using FlapKap.API.MiddleWares;
+using FlapKap.BusinessLogic;
 using FlapKap.Data;
 using FlapKap.Domain.Entities.User;
 using FlapKap.Models;
 using FlapKap.Repository;
 using FlapKap.Repository.UserManagement;
-using FlapKap.Validation.FluentValidation.Users;
+using FlapKap.Validation;
+using FlapKap.Validation.FluentValidation.Products;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;

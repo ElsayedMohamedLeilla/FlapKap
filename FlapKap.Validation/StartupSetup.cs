@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Dawem.Validation
+namespace FlapKap.Validation
 {
     public static class StartupSetup
     {

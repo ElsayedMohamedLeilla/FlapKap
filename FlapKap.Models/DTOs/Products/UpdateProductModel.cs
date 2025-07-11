@@ -1,4 +1,4 @@
-﻿namespace FlapKap.Models.DTOs.Users
+﻿namespace FlapKap.Models.DTOs.Products
 {
     public class UpdateProductModel
     {

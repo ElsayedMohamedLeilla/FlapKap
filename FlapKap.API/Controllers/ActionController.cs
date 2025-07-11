@@ -1,5 +1,5 @@
 ﻿using FlapKap.Contract.BusinessLogic;
-using FlapKap.Models.DTOs.Users;
+using FlapKap.Models.DTOs.UserActions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

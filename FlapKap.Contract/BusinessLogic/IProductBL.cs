@@ -1,6 +1,6 @@
-﻿using FlapKap.Models.DTOs.Users;
+﻿using FlapKap.Models.DTOs.Products;
 using FlapKap.Models.Requests;
-using FlapKap.Models.Response.UserManagement;
+using FlapKap.Models.Response.Products;
 
 namespace FlapKap.Contract.BusinessLogic
 {

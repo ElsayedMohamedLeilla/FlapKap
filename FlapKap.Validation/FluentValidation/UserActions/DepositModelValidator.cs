@@ -1,7 +1,7 @@
-﻿using FlapKap.Models.DTOs.Users;
+﻿using FlapKap.Models.DTOs.UserActions;
 using FluentValidation;
 
-namespace FlapKap.Validation.FluentValidation.Users
+namespace FlapKap.Validation.FluentValidation.UserActions
 {
     public class DepositModelValidator : AbstractValidator<DepositModel>
     {

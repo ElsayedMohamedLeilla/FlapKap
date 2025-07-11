@@ -1,13 +1,14 @@
+using FlapKap.Models.DTOs.Products;
 using FlapKap.Models.DTOs.Users;
 using FlapKap.Models.Response;
-using FlapKap.Models.Response.UserManagement;
+using FlapKap.Models.Response.Products;
 using FlapKap.Tests.Common;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 
-namespace YourApp.Api.Tests.Controllers
+namespace FlapKap.Tests.Controllers
 {
     public class ProductControllerTests : TestBase
     {
